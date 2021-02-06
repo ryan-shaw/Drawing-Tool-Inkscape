@@ -1452,7 +1452,7 @@ class LaserGcode(inkex.Effect):
             "gcode before path": ("G4 P0 \n" + self.options.laser_command + " S" + str(
                 int(self.options.laser_power)) + "\nG4 P" + self.options.power_delay),
             "gcode after path": (
-                    "G4 P0 \n" + self.options.laser_off_command + " S0" + "\n" + "G1 F" + self.options.travel_speed),
+                    "G4 P0 \n" + self.options.laser_off_command + " S0" + "\nG4 P" + self.options.power_delay  + "\nG1 F" + self.options.travel_speed),
         }
 
         self.get_info()
